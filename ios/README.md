@@ -12,8 +12,9 @@ Der Workflow `.github/workflows/ios-build.yml` kann auf einem macOS-Runner einen
 
 ## Aktuelle Grenzen
 
-- Dieses Projekt wurde in der Windows-Umgebung nicht mit Xcode gebaut oder auf einem iPhone getestet.
+- Der iOS-Simulator-Build wurde auf einem GitHub-macOS-Runner erfolgreich kompiliert. Ein signierter Build und ein Test auf einem echten iPhone stehen noch aus.
 - Die Kalendertermine und To-dos bleiben lokal und synchronisieren nicht über mehrere Geräte.
 - App-Icon, Support- und Datenschutzseiten, Store-Screenshots und App-Store-Metadaten müssen vor der Einreichung fertiggestellt werden.
 - Apple prüft jede Einreichung und entscheidet über die Aufnahme in den App Store.
+
 
