@@ -1,4 +1,4 @@
-const CACHE_NAME = 'herzenssache-v3';
+const CACHE_NAME = 'herzenssache-v4';
 const BASE_PATH = new URL('./', self.location).pathname;
 const APP_FILES = [
   BASE_PATH,
@@ -6,6 +6,8 @@ const APP_FILES = [
   `${BASE_PATH}manifest.webmanifest`,
   `${BASE_PATH}details.js`,
   `${BASE_PATH}selfcare.js`,
+  `${BASE_PATH}supabase-config.js`,
+  `${BASE_PATH}account.js`,
   `${BASE_PATH}icons/icon-192.png`,
   `${BASE_PATH}icons/icon-512.png`
 ];
