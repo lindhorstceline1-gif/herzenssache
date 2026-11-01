@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Herzenssache – Alltag mit Herz",
+  "short_name": "Herzenssache",
+  "description": "Rezepte, Familienideen, Selfcare, Kalender und To-dos an einem Ort.",
+  "lang": "de-DE",
+  "start_url": "./?start=home",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "theme_color": "#f7f2ec",
+  "background_color": "#fbf9f5",
+  "categories": ["lifestyle", "food", "family"],
+  "icons": [
+    {"src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
