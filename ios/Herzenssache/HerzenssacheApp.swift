@@ -125,7 +125,8 @@ struct IdeasView: View {
     var body: some View {
         ScrollView { VStack(alignment: .leading, spacing: 14) {
             Text("Schöne Ideen für Zuhause, Familie und deine kleine Auszeit.").foregroundStyle(HSColor.muted).padding(.bottom, 6)
-            ForEach(ideas, id: \.1) { item in
+            ForEach(ideas.indices, id: \.self) { index in
+                let item = ideas[index]
                 HStack(alignment: .top, spacing: 14) {
                     Text(item.0).font(.largeTitle).frame(width: 54, height: 60).background(HSColor.gold, in: RoundedRectangle(cornerRadius: 16))
                     VStack(alignment: .leading, spacing: 6) { Text(item.1).font(.headline); Text(item.2).font(.subheadline).foregroundStyle(HSColor.muted) }
@@ -148,7 +149,8 @@ struct RecipesView: View {
     var body: some View {
         ScrollView { VStack(alignment: .leading, spacing: 14) {
             Text("Einfache Lieblingsgerichte für kleine und große Esser.").foregroundStyle(HSColor.muted)
-            ForEach(recipes, id: \.1) { recipe in
+            ForEach(recipes.indices, id: \.self) { index in
+                let recipe = recipes[index]
                 HStack(alignment: .top, spacing: 15) {
                     Text(recipe.0).font(.system(size: 34)).frame(width: 64, height: 68).background(HSColor.blush, in: RoundedRectangle(cornerRadius: 16))
                     VStack(alignment: .leading, spacing: 5) { Text(recipe.1).font(.headline); Text(recipe.2).font(.subheadline).foregroundStyle(HSColor.muted); Label(recipe.3, systemImage: "clock").font(.caption).foregroundStyle(HSColor.terracotta).padding(.top, 2) }
@@ -270,7 +272,8 @@ struct DIYView: View {
     var body: some View {
         ScrollView { VStack(alignment: .leading, spacing: 14) {
             Text("Kreative Kleinigkeiten, die Freude machen – ganz ohne großen Aufwand.").foregroundStyle(HSColor.muted).padding(.bottom, 6)
-            ForEach(projects, id: \.1) { item in
+            ForEach(projects.indices, id: \.self) { index in
+                let item = projects[index]
                 HStack(alignment: .top, spacing: 14) {
                     Text(item.0).font(.largeTitle).frame(width: 56, height: 60).background(HSColor.sage, in: RoundedRectangle(cornerRadius: 16))
                     VStack(alignment: .leading, spacing: 6) { Text(item.1).font(.headline); Text(item.2).font(.subheadline).foregroundStyle(HSColor.muted) }
@@ -299,4 +302,6 @@ struct QuickCard: View {
 struct HSPrimaryButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View { configuration.label.font(.subheadline.weight(.semibold)).foregroundStyle(.white).padding(.horizontal, 16).padding(.vertical, 11).background(HSColor.ink.opacity(configuration.isPressed ? 0.78 : 1), in: RoundedRectangle(cornerRadius: 12)) }
 }
+
+
 
