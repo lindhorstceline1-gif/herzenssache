@@ -1,4 +1,4 @@
-const CACHE_NAME = 'herzenssache-v2';
+const CACHE_NAME = 'herzenssache-v3';
 const BASE_PATH = new URL('./', self.location).pathname;
 const APP_FILES = [
   BASE_PATH,
