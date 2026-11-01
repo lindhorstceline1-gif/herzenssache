@@ -1,4 +1,4 @@
-const CACHE_NAME = 'herzenssache-v1';
+const CACHE_NAME = 'herzenssache-v2';
 const BASE_PATH = new URL('./', self.location).pathname;
 const APP_FILES = [
   BASE_PATH,
@@ -27,6 +27,15 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
+    if (request.mode === 'navigate') {
+      try {
+        const response = await fetch(request);
+        if (response.ok) await cache.put(BASE_PATH, response.clone());
+        return response;
+      } catch (error) {
+        return (await cache.match(BASE_PATH)) || (await cache.match(`${BASE_PATH}index.html`));
+      }
+    }
     const cached = await cache.match(request, {ignoreSearch: true});
     if (cached) return cached;
     try {
@@ -41,3 +50,4 @@ self.addEventListener('fetch', event => {
     }
   })());
 });
+
